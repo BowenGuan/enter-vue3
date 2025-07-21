@@ -20,6 +20,11 @@ export default defineConfig({
         target: ' http://10.180.40.91:18068/bigscreen',
         changeOrigin: true,
         rewrite: path => path.replace(/^\/smart-idc/, '')
+      },
+      '/smart-pro': {
+        target: 'https://auditsmart.chinatowercom.cn:8078/bigscreen',
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/smart-pro/, '')
       }
     }
   }

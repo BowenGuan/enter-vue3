@@ -105,6 +105,25 @@ const config = ref([
     ],
     loginParams: {},
   },
+  {
+    envLabel: 'smart-生产',
+    envValue: 'smart-pro',
+    loginApi: '/api/authSmart/checkLoginSmart',
+    menuApi: [
+      {menuName: '首页', menuNewUrl: 'smart-audit/homeIndex'}
+    ],
+    baseUrl: 'https://auditsmart.chinatowercom.cn:8078/bigscreen',
+    loginKeys: [
+      {
+        key: 'acctId',
+      },
+      {
+        key: 'pwdaToken',
+        alias: 'sysToken'
+      }
+    ],
+    loginParams: {},
+  },
 ])
 
 
@@ -147,7 +166,6 @@ async function fetchMenu() {
 </script>
 
 <template>
-  {{ currentConfig }}
   <div v-loading="loading" style="width: 800px; display: flex;align-items: center;flex-direction: column">
     <el-space direction="vertical" :size="20">
       <el-steps :active="active" align-center style="min-width: 600px">
