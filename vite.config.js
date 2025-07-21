@@ -6,16 +6,21 @@ export default defineConfig({
   plugins: [vue()],
   server: {
     proxy: {
-      '/idc-api': {
-        target: 'http://10.180.40.94:9101/',
+      '/audit-idc': {
+        target: 'http://10.180.40.94:9101',
         changeOrigin: true,
-        rewrite: path => path.replace(/^\/idc-api/, '')
+        rewrite: path => path.replace(/^\/audit-idc/, '')
       },
-      '/pro-api': {
-        target: 'http://auditxc.chinatowercom.cn:8068/base/',
+      '/audit-pro': {
+        target: 'http://auditxc.chinatowercom.cn:8068/base',
         changeOrigin: true,
-        rewrite: path => path.replace(/^\/pro-api/, '')
+        rewrite: path => path.replace(/^\/audit-pro/, '')
       },
+      '/smart-idc': {
+        target: ' http://10.180.40.91:18068/bigscreen',
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/smart-idc/, '')
+      }
     }
   }
 })
