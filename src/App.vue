@@ -105,6 +105,25 @@ const config = ref([
     ],
     loginParams: {},
   },
+  {
+    envLabel: 'smart-生产',
+    envValue: 'smart-pro',
+    loginApi: '/api/authSmart/checkLoginSmart',
+    menuApi: [
+      {menuName: '首页', menuNewUrl: 'smart-audit/homeIndex'}
+    ],
+    baseUrl: 'https://auditsmart.chinatowercom.cn:8078/bigscreen',
+    loginKeys: [
+      {
+        key: 'acctId',
+      },
+      {
+        key: 'pwdaToken',
+        alias: 'sysToken'
+      }
+    ],
+    loginParams: {},
+  },
 ])
 
 
